@@ -1,19 +1,14 @@
 import { useState } from 'react';
+import { NavLink } from 'react-router-dom';
 
-type Page = 'game' | 'docs';
-
-interface SidebarProps {
-    currentPage: Page;
-    setPage: (page: Page) => void;
-}
-
-export default function Sidebar({ currentPage, setPage }: SidebarProps) {
+export default function Sidebar() {
     const [collapsed, setCollapsed] = useState(false);
 
     const navItems = [
-        { id: 'game', label: 'Game' },
-        { id: 'docs', label: 'Documentation' },
-    ] as const;
+        { to: '/game', label: 'Game' },
+        { to: '/docs', label: 'Documentation' },
+        { to: '/policy', label: 'Privacy Policy' },
+    ];
 
     return (
         <nav
@@ -34,24 +29,22 @@ export default function Sidebar({ currentPage, setPage }: SidebarProps) {
             </div>
 
             <ul className="flex flex-col gap-4">
-                {navItems.map(({ id, label }) => (
-                    <li
-                        key={id}
-                        className={`cursor-pointer rounded-lg px-4 py-3 font-semibold transition-all duration-200 flex items-center gap-4
-            ${collapsed ? 'justify-center' : ''}
-            ${currentPage === id
-                            ? 'bg-green-500 shadow-lg text-white'
-                            : 'hover:bg-green-800 hover:translate-x-1'
-                        }`}
-                        onClick={() => setPage(id)}
-                        tabIndex={0}
-                        role="button"
-                        onKeyDown={e => {
-                            if (e.key === 'Enter' || e.key === ' ') setPage(id);
-                        }}
-                    >
-                        <span className={collapsed ? 'text-2xl' : 'hidden'}>{label.charAt(0)}</span>
-                        <span className={collapsed ? 'hidden' : 'block'}>{label}</span>
+                {navItems.map(({ to, label }) => (
+                    <li key={to}>
+                        <NavLink
+                            to={to}
+                            className={({ isActive }) =>
+                                `cursor-pointer rounded-lg px-4 py-3 font-semibold transition-all duration-200 flex items-center gap-4
+                                ${collapsed ? 'justify-center' : ''}
+                                ${isActive
+                                    ? 'bg-green-500 shadow-lg text-white'
+                                    : 'hover:bg-green-800 hover:translate-x-1'
+                                }`
+                            }
+                        >
+                            <span className={collapsed ? 'text-2xl' : 'hidden'}>{label.charAt(0)}</span>
+                            <span className={collapsed ? 'hidden' : 'block'}>{label}</span>
+                        </NavLink>
                     </li>
                 ))}
             </ul>
