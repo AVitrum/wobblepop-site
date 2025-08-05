@@ -9,8 +9,9 @@ export default function Sidebar({ isOpen, setIsOpen }: SidebarProps) {
     const navItems = [
         { to: '/game', label: 'Game' },
         { to: '/docs', label: 'Documentation' },
-        { to: '/policy', label: 'Privacy Policy' },
     ];
+
+    const pdfFile = `${import.meta.env.BASE_URL}PrivacyPolicy_WobblePop_Dropkick.pdf`;
 
     return (
         <>
@@ -55,6 +56,16 @@ export default function Sidebar({ isOpen, setIsOpen }: SidebarProps) {
                             </NavLink>
                         </li>
                     ))}
+                    <li>
+                        <a
+                            href={pdfFile}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="cursor-pointer rounded-lg px-4 py-3 font-semibold transition-all duration-200 flex items-center gap-4 hover:bg-green-800 hover:translate-x-1"
+                        >
+                            <span>Privacy Policy</span>
+                        </a>
+                    </li>
                 </ul>
 
                 <footer className="mt-auto text-xs text-green-300 select-none">
