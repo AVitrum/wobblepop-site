@@ -1,13 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8" />
+    <meta charset="utf-8">
     <title>Redirecting...</title>
+    <script>
+        const l = window.location;
+        l.replace(
+            l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
+            '/' + l.pathname.split('/')[1] +
+            '/?p=' + l.pathname.slice(1).replace(/^(?:\/?[^/]+){1}\//, '') +
+            l.search +
+            l.hash
+        );
+    </script>
 </head>
-<body>
-<script>
-    sessionStorage.redirect = location.pathname;
-    window.location.href = "/";
-</script>
-</body>
+<body></body>
 </html>
