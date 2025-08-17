@@ -73,4 +73,36 @@
   *:hover > .border-beam {
     opacity: 1;
   }
+
+  /* Football pitch background utility */
+  .bg-pitch {
+    background: radial-gradient(circle at 30% 20%, rgba(60, 255, 140, 0.12), transparent 60%),
+      radial-gradient(circle at 70% 80%, rgba(0, 180, 90, 0.15), transparent 65%),
+      repeating-linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 0.04) 0 2px,
+        transparent 2px 80px
+      ),
+      linear-gradient(135deg, #06150d, #082014 60%, #031008);
+    background-blend-mode: screen, screen, normal, normal;
+  }
+
+  /* Neon gradient text */
+  .text-gradient-neon {
+    background: linear-gradient(90deg, #7cff4e, #37f26e 30%, #7cff4e 60%, #b0ffcf);
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+
+  /* Accent ring focus style */
+  .focus-accent:focus {
+    outline: 2px solid #7cff4e;
+    outline-offset: 2px;
+    box-shadow: 0 0 0 4px rgba(124, 255, 78, 0.25);
+  }
+
+  /* Card hover glow */
+  .hover-glow:hover {
+    box-shadow: 0 0 0 1px rgba(124, 255, 78, 0.4), 0 0 32px -4px rgba(124, 255, 78, 0.5);
+  }
 }
