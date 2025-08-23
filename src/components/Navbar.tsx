@@ -8,7 +8,7 @@ export default function Navbar({ setSidebarOpen }: NavbarProps) {
   const location = useLocation();
   const navItems = [
     { to: '/game', label: 'Game' },
-    // { to: '/docs', label: 'Documentation' },
+    { to: '/docs', label: 'Documentation' },
   ];
   const pdfFile = `${import.meta.env.BASE_URL}PrivacyPolicy_WobblePop_Dropkick.pdf`;
   return (

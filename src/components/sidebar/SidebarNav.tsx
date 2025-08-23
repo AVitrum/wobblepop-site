@@ -7,7 +7,7 @@ interface SidebarNavProps {
 export default function SidebarNav({ setIsOpen }: SidebarNavProps) {
     const navItems = [
         { to: '/game', label: 'Game' },
-        // { to: '/docs', label: 'Documentation' },
+        { to: '/docs', label: 'Documentation' },
     ];
 
     const pdfFile = `${import.meta.env.BASE_URL}PrivacyPolicy_WobblePop_Dropkick.pdf`;
