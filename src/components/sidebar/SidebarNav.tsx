@@ -1,4 +1,5 @@
 import { NavLink } from 'react-router-dom';
+import {CREDITS_PATH, PRIVACY_POLICY_PATH} from "../../consts/FilePaths";
 
 interface SidebarNavProps {
     setIsOpen: (isOpen: boolean) => void;
@@ -9,8 +10,6 @@ export default function SidebarNav({ setIsOpen }: SidebarNavProps) {
         { to: '/game', label: 'Game' },
         { to: '/docs', label: 'Documentation' },
     ];
-
-    const pdfFile = `${import.meta.env.BASE_URL}PrivacyPolicy_WobblePop_Dropkick.pdf`;
 
     return (
         <ul className="flex flex-col gap-3">
@@ -34,7 +33,18 @@ export default function SidebarNav({ setIsOpen }: SidebarNavProps) {
             ))}
             <li className="animate-fade-in-up" style={{ animationDelay: `${navItems.length * 80}ms` }}>
                 <a
-                    href={pdfFile}
+                    href={CREDITS_PATH}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="relative cursor-pointer rounded-lg pl-3 pr-5 py-3 font-medium text-sm tracking-wide transition-all duration-300 flex items-center gap-3 focus-accent text-white/60 hover:text-white hover:bg-white/5"
+                >
+                    <span className="absolute left-0 top-0 h-full w-[3px] rounded-r-full bg-gradient-to-b from-neon-lime via-neon-green to-neon-lime opacity-0 group-hover:opacity-60" />
+                    <span className="relative z-10">Credits</span>
+                </a>
+            </li>
+            <li className="animate-fade-in-up" style={{ animationDelay: `${navItems.length * 80}ms` }}>
+                <a
+                    href={PRIVACY_POLICY_PATH}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="relative cursor-pointer rounded-lg pl-3 pr-5 py-3 font-medium text-sm tracking-wide transition-all duration-300 flex items-center gap-3 focus-accent text-white/60 hover:text-white hover:bg-white/5"
