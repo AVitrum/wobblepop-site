@@ -64,7 +64,7 @@ export default function Documentation() {
                         In Swipe mode, draw gentle S-curves to bypass defenders and set up bend shots.
                     </Callout>
                     <Callout variant="tip">
-                        Watch rebounds. Walls and players can set up curve-friendly second touches.
+                        Watch rebounds. Walls can set up curve-friendly second touches.
                     </Callout>
                     <Callout variant="warning">
                         Over-curving slows the ball — balance style with speed when defenders are close.
