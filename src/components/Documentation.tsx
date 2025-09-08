@@ -55,23 +55,6 @@ export default function Documentation() {
                 </div>
             </DocSection>
 
-            <DocSection id="tips" title="Tips & Tricks">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
-                    <Callout variant="tip">
-                        In Simple mode, use shorter drags for micro-adjustments; save long pulls for open lanes.
-                    </Callout>
-                    <Callout variant="tip">
-                        In Swipe mode, draw gentle S-curves to bypass defenders and set up bend shots.
-                    </Callout>
-                    <Callout variant="tip">
-                        Watch rebounds. Walls can set up curve-friendly second touches.
-                    </Callout>
-                    <Callout variant="warning">
-                        Over-curving slows the ball — balance style with speed when defenders are close.
-                    </Callout>
-                </div>
-            </DocSection>
-
             <DocSection id="faq" title="FAQ">
                 <FAQ
                     items={[
